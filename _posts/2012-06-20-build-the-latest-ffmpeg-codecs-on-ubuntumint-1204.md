@@ -1,0 +1,106 @@
+---
+layout: post
+title: "Build the latest FFmpeg codecs on Ubuntu/Mint 12.04"
+description: "ffmpeg,h.264,codecs, ubuntu 12.04"
+category: linux
+tags: [linux, codecs, a/v editing]
+---
+{% include JB/setup %}
+
+I lost the original article but here is the bash script I run to install the latest FFmpeg media codecs on ubuntu, mint, elementary and arch distros. I have a good back up system and so I wipe and reinstall with every major release.
+
+This will install the following codecs
+* FFmpeg and [filters](http://ffmpeg.org/trac/ffmpeg/wiki/FilteringGuide#ListofFilters)
+* libfaac for AAC
+* libmp3lame for MP3
+* libopencore-amr for AMR
+* librtmp
+* libtheora for Theora
+* libvorbis for Vobis
+* libvpx for VP8
+* libx264 for H.264
+
+### prepare
+
+{% highlight bash %}
+
+mkdir -p ~/Projects/codecs
+sudo apt-get remove ffmpeg x264 libav-tools libvpx-dev libx264-dev
+
+sudo apt-get update
+sudo apt-get -y install autoconf build-essential checkinstall git libfaac-dev libgpac-dev \
+  libjack-jackd2-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev \
+  librtmp-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev \
+  libx11-dev libxext-dev libxfixes-dev pkg-config texi2html yasm zlib1g-dev
+{% endhighlight %}
+
+
+### build 
+
+####[x264](http://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide) video encoder
+{% highlight bash %}
+cd ~/Projects/codecs
+git clone --depth 1 git://git.videolan.org/x264
+cd x264
+./configure --enable-static
+make
+sudo checkinstall --pkgname=x264 --pkgversion="3:$(./version.sh | \
+  awk -F'[" ]' '/POINT/{print $4"+git"$5}')" --backup=no --deldoc=yes \
+  --fstrans=no --default
+{% endhighlight %}
+
+
+####fdk-aac audio encoder
+{% highlight bash %}
+
+cd ~/Projects/codecs
+git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
+cd fdk-aac
+autoreconf -fiv
+./configure --disable-shared
+make
+sudo checkinstall --pkgname=fdk-aac --pkgversion="$(date +%Y%m%d%H%M)-git" --backup=no \
+  --deldoc=yes --fstrans=no --default
+{% endhighlight %}
+
+####libvpx - VP8 video encoder and decoder
+{% highlight bash %}
+
+cd ~/Projects/codecs
+git clone --depth 1 http://git.chromium.org/webm/libvpx.git
+cd libvpx
+./configure
+make
+sudo checkinstall --pkgname=libvpx --pkgversion="1:$(date +%Y%m%d%H%M)-git" --backup=no \
+  --deldoc=yes --fstrans=no --default
+{% endhighlight %}
+
+####FFmpeg
+{% highlight bash %}
+
+cd ~/Projects/codecs
+git clone --depth 1 git://source.ffmpeg.org/ffmpeg
+cd ffmpeg
+./configure --enable-gpl --enable-libfaac --enable-libfdk-aac --enable-libmp3lame \
+  --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-librtmp --enable-libtheora \
+  --enable-libvorbis --enable-libvpx --enable-x11grab --enable-libx264 --enable-nonfree \
+  --enable-version3
+make
+sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(date +%Y%m%d%H%M)-git" --backup=no \
+  --deldoc=yes --fstrans=no --default
+hash x264 ffmpeg ffplay ffprobe
+{% endhighlight %}
+
+####qt-faststart 
+This is necessary for H.264 video in MP4 containers on the web. It rearranges the video to allow for better streaming and playback without first downloading the video. 
+
+* __Usage:__ qt-faststart input.mp4 output.mp4
+{% highlight bash %}
+
+cd ~/Projects/codecs/ffmpeg
+make tools/qt-faststart
+sudo checkinstall --pkgname=qt-faststart --pkgversion="$(date +%Y%m%d%H%M)-git" --backup=no \
+  --deldoc=yes --fstrans=no --default install -Dm755 tools/qt-faststart \
+  /usr/local/bin/qt-faststart
+{% endhighlight %}
+
