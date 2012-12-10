@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Move raspberry pi fs to usb"
+title: "Move Raspberry Pi Filesystem to USB"
 description: "raspberry pi, rpi, filesystem, usb"
 category: linux
 tags: [raspberry-pi, linux]

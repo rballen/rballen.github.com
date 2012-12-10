@@ -5,10 +5,6 @@ tagline: personal blog, memory dump and other randomness
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
-
-
-
 ## My posts 
 
 {% for post in site.posts %}
@@ -25,8 +21,10 @@ Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.ht
 
 ## To-Do
 
-* Read up on usage and documentation : [Jekyll Bootstrap](http://jekyllbootstrap.com)
+* Read up on usage and documentation : [Jekyll Bootstrap](http://jekyllbootstrap.com) and [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
 * Clean up theme, make custom markup.
 * Finish importing from old Wordpress site
+* add sidebar, angularjs, peronal rss and todo
+* port to other domain
 
 

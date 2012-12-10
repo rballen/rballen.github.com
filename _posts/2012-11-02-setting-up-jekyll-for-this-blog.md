@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setting up jekyll for this blog"
+title: "Setting up Jekyll for this Blog"
 description: "jekyll, blogging"
 category: linux
 tags: [blog,jekyll,linux,helloworld]
