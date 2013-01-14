@@ -5,8 +5,6 @@ description: "raspberry pi, rpi, filesystem, usb"
 category: linux
 tags: [raspberry-pi, linux]
 ---
-{% include JB/setup %}
-
 
 I've gone thru so many of those damn sd cards and it's time to move off to a usb thumb drive. My ScanDisk class 4 is working better for debian and arch but it still locks up and I have to hard reboot every 4 days or so. I use my pi as a server and need it to be always up. So after doing a lot of research I settled on the [Kingston 64G datatravelor gen 2](http://www.amazon.com/gp/product/B008AGAFQU/ref=pd_sim_e_9)
 

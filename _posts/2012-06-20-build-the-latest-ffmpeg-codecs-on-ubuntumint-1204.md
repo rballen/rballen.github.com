@@ -5,19 +5,26 @@ description: "ffmpeg,h.264,codecs, ubuntu 12.04"
 category: linux
 tags: [linux, codecs, a/v editing]
 ---
-{% include JB/setup %}
-
 I lost the original article but here is the bash script I run to install the latest FFmpeg media codecs on ubuntu, mint, elementary and arch distros. I have a good back up system and so I wipe and reinstall with every major release.
 
 This will install the following codecs
+
 * FFmpeg and [filters](http://ffmpeg.org/trac/ffmpeg/wiki/FilteringGuide#ListofFilters)
+
 * libfaac for AAC
+
 * libmp3lame for MP3
+
 * libopencore-amr for AMR
+
 * librtmp
+
 * libtheora for Theora
+
 * libvorbis for Vobis
+
 * libvpx for VP8
+
 * libx264 for H.264
 
 ### prepare

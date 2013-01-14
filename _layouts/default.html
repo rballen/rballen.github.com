@@ -1,6 +1,144 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
+{% include header.html %}
+<div class="container well">
+   <div class="row-fluid">
+    
+      <div id="main" class="golden-large" >{{ content }}</div>
+
+      <div id="sidebar" class="golden-small">
+
+         <div id="repo-list" class="widget">
+            <h3>My Repos</h3>
+
+            <ul class="media-list">
+
+               <li class="repo media">
+                  <!-- vagrant-ubuntu-precise-32 -->
+                  <a href="https://github.com/rballen/vagrant-ubuntu-precise-32">
+                     <div class="pull-left">
+                        <span class="bmicon bmicon-cube media-object"></span>
+                     </div>
+                     <div class="media-body">
+                        <h4 class="media-heading">vagrant-ubuntu-precise-32</h4>
+                        <p>
+                           my virtual dev box built with puppet and based on ubuntu 12.04 lts.
+                           <p></div>
+                        </a>
+                     </li>
+
+                     <li class="repo media">
+                        <!-- linux-distros-setup -->
+                        <a href="https://github.com/rballen/linux-distros-setup">
+                           <div class="pull-left">
+                              <img class="media-object" src="/assets/img/linux.png"></div>
+                           <div class="media-body">
+                              <h4 class="media-heading">linux-distros-setup</h4>
+                              <p>set up scripts for installing linux distros</p>
+                           </div>
+                        </a>
+                     </li>
+
+                     <li class="repo media">
+                        <!-- ombuntu -->
+                        <a href="https://github.com/rballen/ombuntu.com">
+                           <div class="pull-left">
+                              <img class="media-object" src="/assets/img/ombuntu.png"></div>
+                           <div class="media-body">
+                              <h4 class="media-heading">ombuntu.com</h4>
+                              <p>online and mobile app for learning sanskrit</p>
+                           </div>
+                        </a>
+                     </li>
+
+                     <li class="repo media">
+                        <!-- dotfiles -->
+                        <a href="https://github.com/rballen/dotfiles">
+                           <div class="pull-left">
+                              <img class="media-object" src="/assets/img/dotfiles.png"></div>
+                           <div class="media-body">
+                              <h4 class="media-heading">my dotfiles</h4>
+                              <p>my .vim, .bashrc, .bash_profile, etc</p>
+                           </div>
+                        </a>
+                     </li>
+
+                     <li class="repo media">
+                        <!-- robuntu.com -->
+                        <a href="http://robuntu.com">
+                           <div class="pull-left">
+                              <img class="media-object" src="/assets/img/favicon.png"></div>
+                           <div class="media-body">
+                              <h4 class="media-heading">robuntu.com</h4>
+                              <p>my sandbox</p>
+                           </div>
+                        </a>
+                     </li>
+
+                     <li class="repo media">
+                        <!-- raspberry-pi -->
+                        <a href="https://github.com/rballen/raspberry-pi.git">
+                           <div class="pull-left">
+                              <img class="media-object" src="/assets/img/rpi.png"></div>
+                           <div class="media-body">
+                              <h4 class="media-heading">raspberry-pi</h4>
+                              <p>my pi setup scripts</p>
+                           </div>
+                        </a>
+                     </li>
+
+                     <li class="repo media">
+                        <!-- sublime-text-2 -->
+                        <a href="https://github.com/rballen/sublime-text-2">
+                           <div class="pull-left">
+                              <img class="media-object" src="/assets/img/sublime.png"></div>
+                           <div class="media-body">
+                              <h4 class="media-heading">sublime-text-2</h4>
+                              <p>so i can setup subl anywhere anytime any os</p>
+                           </div>
+                        </a>
+                     </li>
+
+                  </ul>
+
+               </div>
+               <!-- /repos -->
+
+               <div id="blogroll" class="widget">
+                  <h3>blogroll</h3>
+                  <ul class="nav nav-list">
+                     <li class="nav-header">blogroll</li>
+                     <li class="active">
+                        <a href="#">Link</a>
+                     </li>
+                     <li>
+                        <a href="#">Link</a>
+                     </li>
+                     <li>
+                        <a href="#">Link</a>
+                     </li>
+                     <li>
+                        <a href="#">Link</a>
+                     </li>
+                     <li class="nav-header">Sidebar</li>
+                     <li>
+                        <a href="#">Link</a>
+                     </li>
+                     <li>
+                        <a href="#">Link</a>
+                     </li>
+                     <li>
+                        <a href="#">Link</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- /repos -->
+
+               <div class="row-fluid">
+                  <div class="golden-small">Small</div>
+                  <div class="golden-large">Large</div>
+               </div>
+               <!-- /row-fluid --> </div>
+            <!-- /sidebar --> </div>
+         <!-- /row-fluid --> </div>
+
+      <!-- /.container -->
+      {% include footer.html %}

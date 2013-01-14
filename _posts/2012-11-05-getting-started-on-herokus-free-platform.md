@@ -1,12 +1,11 @@
 ---
 layout: post
-title: "Getting Started on Herokus Free Platform"
+title: "Getting Started on Heroku's Free Platform"
 description: "heroku"
 category: workflow
-tags: [heroku,free]
+tags: [heroku, free]
 ---
-{% include JB/setup %}
-So my free Amazon micro run is up and they shutdown the node vm at no.de. Not a problem because now I have a free github account + hosting + code repo as well as a free platform running on [heroku](http://heroku.com) using nosql db. Sooon my pi will be on the internets too :)
+Getting started on Heroku (cedar) [heroku](http://heroku.com) using mongodb. My current distro is Linux Mint 14 Cinnamon.
 
 {% highlight bash %}
 
@@ -17,12 +16,12 @@ heroku addons:add mongolab:starter
 
 $ heroku login
 Enter your Heroku credentials.
-Email: adam@example.com
+Email: bert@example.com
 Password:
 Could not find an existing public key.
 Would you like to generate one? [Yn]
 Generating new SSH public key.
-Uploading ssh public key /Users/adam/.ssh/id_rsa.pub
+Uploading ssh public key /home/ra/.ssh/id_rsa.pub
 
 $ cd ~/myapp
 $ heroku create

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}">
+  {% endif %}
+  <meta name="author" content="{{ site.author.username }}">
+
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">
+      body {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        background-color: #091E30;
+       
+      }
+      #main {
+         background-color: #ffffff;
+         margin-top: 10px;
+      }
+      #sidebar {
+       /* background-color: #444444;    */   
+       /* background-color: #DCEAF4;  */  
+      }
+
+      .well { 
+         background-color: #DCEAF4;     
+
+      }
+      .navbar-inverse a {
+        color: #ffffff;
+        text-decoration: none;
+        cursor: hand;
+      }
+      .navbar-inverse a:hover {
+         color: rgba(0, 0, 0, 0.8);
+      }
+     /* .navbar-inverse li {
+        border-left: solid 1px #ffffff;
+        font-size: 30px;
+      }*/
+      #brand h2 {
+         margin: 3px 0 0;
+      }
+      #brand p {
+        margin: 3px 5px;
+        font-size: 16px;
+        color: #ffffff;
+      }
+      .navbar-inverse .navbar-inner {
+        background: #008B17;      
+      }
+      .navbar-inverse span.bmicon {
+         width: 40px;
+         height: 40px;
+         font-size: 40px;
+         line-height: 40px;
+      }
+      .navbar-inverse {
+        border-bottom: solid 1px #ffffff;
+      }
+      .navbar-inner {
+        padding-top: 3px;
+      }
+      .widget {
+          background-color: #FFFFFF;
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);   
+          font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+          font-style: normal;
+          margin: 0 0 15px 15px;   
+      }
+      h3 {         
+          /*font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;*/
+         /* font-size: 24px;
+          font-weight: bold;*/
+          letter-spacing: -0.3px;
+          margin: 13px 18px 6px;
+          text-transform: uppercase;
+           border-bottom: 4px solid #000000;
+      }
+      
+      .content {       
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+          
+     
+            
+    
+ 
+    </style>
+  <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/assets/css/bootmetro-icons.css" rel="stylesheet" >
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="shortcut icon" href="/assets/img/favicon.png">
+
+  <!--     
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">--></head>
+<body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div id="brand" class="span3">
+            <h2 class="digital">
+              <a href="/">rballen.github.com</a>
+            </h2>
+            <p>personal blog, memory dump and other randomnes</p>
+          </div>
+          <div class="span9 ">
+            <ul class="inline pull-right">
+              <li>
+                <a href="#">
+                  <span class="bmicon bmicon-pencil"></span>
+                  <br/>
+                  blog
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="bmicon bmicon-document-2"></span>
+                  <br/>
+                  docs
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="bmicon bmicon-feed"></span>
+                  <br/>
+                  <span>rss</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="bmicon bmicon-rocket"></span>
+                  <br/>
+                  <span>devboard</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
